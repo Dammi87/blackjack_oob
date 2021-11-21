@@ -1,3 +1,33 @@
+/*
+  1. Create the constructor for this class, it should accept a name and deck.
+     But in the constructor, set the this.hand = [].
+
+  2. Create void drawCard()
+     It should draw a card from the deck attribute, and add it to the
+     hand list.
+
+  3. void returnCards()
+     This method should return all cards from the hand to the deck (check the
+     methods from the deck)
+
+  4. String currentHand()
+     Return the current hand, like ♥A,♥2,♦K (Use the fact that Card now has
+     a toString() method!).
+
+  5. int handValue()
+     Calculates the total value of the hand. You can try to be smart and make
+     the method calculate the maximum value (like, not busting by setting
+     the ace as 1 instead of 11) etc.
+
+  6. void info()
+     Print the name, current hand and handvalue to the terminal.
+
+  7.  bool bust()
+      Returns true if handValue() is larger than 21.
+
+*/
+
+
 import 'card.dart';
 import 'deck.dart';
 
@@ -6,53 +36,5 @@ class Agent {
   Deck deck;
   List<Card> hand;
   String name;
-
-  Agent({String name, Deck deck}){
-    this.deck = deck;
-    this.hand = [];
-    this.name = name;
-  }
-
-  void drawCards({int amount = 1}){
-    for(int idx=0; idx<amount; idx++){
-      hand.add(deck.drawCard());
-    }
-    // Sorts the card from small to large
-    hand.sort((a, b) => b.faceValue.compareTo(a.faceValue));
-  }
-
-  void returnCards(){
-    deck.returnCards(hand);
-  }
-
-  String currentHand(){
-    return hand.join(',');
-  }
-
-  int handValue(){
-    int points = 0;
-    for(Card card in hand){
-      if(card.value() != 1) {
-        points += card.value();
-      } else {
-        // Card is Ace
-        if(points + 11 > 21){
-          points += 1;
-        } else {
-          points += 11;
-        }
-      }
-    }
-
-    return points;
-  }
-
-  void info(){
-    print('$name, you currently have ${currentHand()} with a value of ${handValue()}');
-  }
-
-  bool bust() {
-    return handValue() > 21;
-  }
 
 }

@@ -1,4 +1,15 @@
+/*
+  Create a class called QuestionHandler
 
+  1. Create the method bool YesOrNo(String question)
+     It should print the question, then verify if either yes/no has been given.
+     returns true/false as expected.
+
+  2. Create the method int amount(String question)
+     Asks the questions, parses the users input as a number. Catch any exceptions
+     and ask again if problems arise. Return amount.
+
+ */
 
 import 'dart:io';
 
