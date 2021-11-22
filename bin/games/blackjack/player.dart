@@ -20,24 +20,4 @@ import 'core/core.dart';
 
 class Player extends Agent {
 
-  Player({String name, Deck deck}) : super(name: name, deck: deck);
-  Bank bank = Bank();
-
-  void performTurn() {
-    while(true){
-      info();
-      bool ans = QuestionHandler().YesOrNo('Another card ? ');
-      if(ans){
-        drawCard();
-      } else {
-        break;
-      }
-      if(handValue() > 21){
-        info();
-        print('You busted!');
-        break;
-      }
-    }
-  }
-
 }

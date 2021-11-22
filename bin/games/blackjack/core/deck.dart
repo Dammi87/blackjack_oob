@@ -27,20 +27,9 @@
 import 'card.dart';
 
 List<Card> createShuffledDeck() {
-  List<Card> cards = [];
-  for (int i = 0; i < 4; i++) {
-    for (int j = 1; j < 14; j++) {
-      Card c = Card(j, enumSuits.values[i]);
-      cards.add(c);
-    }
-  }
-  cards.shuffle();
-  return cards;
 }
 
 class Deck {
-  List<Card> _cards = createShuffledDeck();
-
 }
 
 void main() {

@@ -57,68 +57,6 @@ enum enumCardValue {
 }
 
 class Suit {
-  enumSuits suit;
-  Suit(this.suit);
-
-  String toString(){
-    if(suit == enumSuits.heart){
-      return '♥';
-    } else if(suit == enumSuits.spade){
-      return '♠';
-    } else if(suit == enumSuits.diamond){
-      return '♦';
-    } else if(suit == enumSuits.club){
-      return '♣';
-    }
-  }
 }
 class Card {
-
-  int faceValue;
-  enumSuits suit;
-  Suit _suit;
-  bool hide = false;
-
-  Card(this.faceValue, this.suit){
-    _suit = Suit(suit);
-  }
-
-  String faceToString(){
-    if(faceValue == 11) {
-      return 'J';
-    }
-    if(faceValue == 12) {
-      return 'Q';
-    }
-    if(faceValue == 13) {
-      return 'K';
-    }
-    if(faceValue == 1) {
-      return 'A';
-    }
-    return faceValue.toString();
-  }
-  int value() {
-    if(faceValue > 10){
-      return 10;
-    }
-    return faceValue;
-  }
-  @override
-  String toString() {
-    if(hide){
-      return '*';
-    }
-    return '$_suit${faceToString()}';
-  }
-}
-
-void main() {
-
-  Card card = Card(13, enumSuits.spade);
-  Card card2 = Card(7, enumSuits.spade);
-  Card card3 = Card(1, enumSuits.spade);
-  card2.hide = true;
-  print([card, card2, card3]);
-
 }
